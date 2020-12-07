@@ -13,8 +13,10 @@ function ListComponent(props) {
   const renderSpinner = () => {
     if (fetching) {
       return (
-        <div className="progress">
-          <div className="indeterminate"></div>
+        <div className="container">
+          <div className="progress">
+            <div className="indeterminate"></div>
+          </div>
         </div>
       );
     }
