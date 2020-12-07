@@ -20,21 +20,6 @@ function ListComponent(props) {
     }
   };
 
-  if (data.length === 0) {
-    return (
-      <Fragment>
-        {renderSpinner()}
-        <ul className="collection">
-          <li className="collection-item">
-            <p id="no-data" style={{ textAlign: "center" }}>
-              {!fetching && <span>{empty}</span>}
-            </p>
-          </li>
-        </ul>
-      </Fragment>
-    );
-  }
-
   const callback =
     props.callback ||
     function (props) {
@@ -50,6 +35,20 @@ function ListComponent(props) {
 
     return <ul className="collection">{list_items}</ul>;
   };
+
+  if (data.length === 0 && !fetching) {
+    return (
+      <Fragment>
+        <ul className="collection">
+          <li className="collection-item">
+            <p id="no-data" style={{ textAlign: "center" }}>
+              <span>{empty}</span>
+            </p>
+          </li>
+        </ul>
+      </Fragment>
+    );
+  }
 
   return (
     <Fragment>
