@@ -7,10 +7,12 @@ import ListComponent from "components/ListComponent";
 import TourContainerComponent from "components/container/TourContainerComponent";
 
 function HomePage() {
-  const { state, callReducer } = getRequestThenDispatch(
+  const { state, callReducer, request } = getRequestThenDispatch(
     "/api/products",
     "UPDATE_PRODUCTS"
   );
+
+  const { fetching } = request;
 
   let Container = TourContainerComponent;
 
@@ -75,7 +77,10 @@ function HomePage() {
       <div className="row">
         <div className="container">
           <Search dispatch="UPDATE_PRODUCTS" endpoint="/api/products/search" />
-          <ListComponent {...{ list, callback }} dispatch="UPDATE_PRODUCTS" />
+          <ListComponent
+            {...{ list, callback, fetching }}
+            dispatch="UPDATE_PRODUCTS"
+          />
         </div>
       </div>
     </Container>

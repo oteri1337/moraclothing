@@ -10,9 +10,9 @@ function ContainerComponent(props) {
   const bread = props.bread || [];
   const title = bread[bread.length - 1]?.label || "";
 
-  // React.useEffect(() => {
-  //   scrollTo(0, 0);
-  // }, []);
+  React.useEffect(() => {
+    scrollTo(0, 0);
+  }, []);
 
   React.useLayoutEffect(() => {
     const elems = document.querySelectorAll(".sidenav");
