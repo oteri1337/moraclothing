@@ -14,8 +14,10 @@ function ListComponent(props) {
     if (fetching) {
       return (
         <div className="container">
-          <div className="progress">
-            <div className="indeterminate"></div>
+          <div className="app-px-3">
+            <div className="progress">
+              <div className="indeterminate"></div>
+            </div>
           </div>
         </div>
       );
