@@ -1,0 +1,20 @@
+{
+  "development": {
+    "dialect": "mysql",
+    "username": "root",
+    "host": "127.0.0.1",
+    "database": "moraclothing",
+    "password": "mysqlpassword"
+  },
+  "production": {
+    "host": "ec2-54-170-190-29.eu-west-1.compute.amazonaws.com",
+    "database": "d4cmsfhp4taq9c",
+    "username": "yqeliicedezoxv",
+    "password": "eba06e34b44a8d8cebe10428a2d547c4fdb78b2bd7630093e9fdc3e15cc21388",
+    "dialect": "postgres",
+    "ssl": true,
+    "dialectOptions": {
+      "ssl": true
+    }
+  }
+}
