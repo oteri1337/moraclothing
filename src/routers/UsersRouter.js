@@ -20,23 +20,6 @@ router.post("/users/accounts", P.user, C.createAccount);
 
 router.delete("/users/accounts", P.user, C.deleteAccount);
 
-// wallet create
-router.post("/users/wallet/btc/create", P.user, C.createBtc);
-
-router.post("/users/wallet/eth/create", P.user, C.createEth);
-
-router.post("/users/wallet/usdt/create", P.user, C.createUsdt);
-
-// wallet send
-
-router.post("/users/wallet/btc/send", P.user, V.send, C.sendBtc);
-
-router.post("/users/wallet/eth/send", P.user, V.send, C.sendEth);
-
-router.post("/users/wallet/usdt/send", P.user, V.send, C.sendUsdt);
-
-router.post("/users/wallet/naira/send", P.user, V.sendNaira, C.sendNaira);
-
 // auth
 router.post("/users/auth/verifyemail", P.user, C.verifyEmail);
 

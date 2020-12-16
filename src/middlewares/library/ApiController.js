@@ -1,5 +1,4 @@
 const path = require("path");
-const twilio = require("twilio");
 const { Op } = require("sequelize");
 const nodemailer = require("nodemailer");
 
@@ -42,20 +41,6 @@ ApiController.sendEmail = async function (to, text, subject) {
       console.log("failed to send email to", to);
     }
   });
-};
-
-ApiController.sendSms = async function (to, body) {
-  console.log("sending sms to ", to);
-
-  const from = process.env.TWILIO_NUMBER;
-  const accountSid = process.env.TWILIO_SID;
-  const authToken = process.env.TWILIO_TOKEN;
-
-  const client = new twilio(accountSid, authToken);
-
-  client.messages
-    .create({ body, to, from })
-    .then((message) => console.log("sms sent ", message.sid));
 };
 
 ApiController.uploadImage = (file) => {
