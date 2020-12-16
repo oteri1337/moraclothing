@@ -20,7 +20,7 @@ class Footer extends React.Component {
 
               <p>
                 <span className="material-icons notranslate">phone</span> +234
-                816 214 6732
+                701 241 3480
               </p>
 
               <p>
